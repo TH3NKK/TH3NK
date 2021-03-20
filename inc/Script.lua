@@ -3884,8 +3884,11 @@ return [[
 
  ⇓⇓⇓ 
 
-`git clone https://github.com/TH3NKK/nizk.git ;cd nizk;chmod +x ins;./ins
+` 
+git clone https://github.com/TH3NKK/nizk.git ;cd nizk;chmod +x ins;./ins
+
 `
+
 » فقط أضغط على الكود ☝️ ليتم النسخ 
 » ثم الصقه بالترمنال وانتر تتنظر يتنصب 
 » بعدهہ‌‏آ يطـلب مـعلومـآت بآلترمـنآل .
