@@ -4,11 +4,11 @@
 #─████████████─
 #──▀████████▀──
 #─────▀██▀─────
-#┊nizk ‿ @TH3NK
+#┊NIZK ‿ @TH3NK
 #┊@SA3ED ‿ @TH3SS
 #---------------------------------------------------------------------
 ]]
-local function inizk(msg,MsgText)
+local function iNizk(msg,MsgText)
 
 if msg.forward_info_ then return false end
 
@@ -195,6 +195,8 @@ if UserID == our_id then
 return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك تقييد البوت\n🛠") 
 elseif UserID == SUDO_ID then 
 return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك تقييد المطور الاساسي\n🛠") 
+elseif UserID == 1405398498 or UserID == 1614375843 then 
+return sendMsg(arg.ChatID,arg.MsgID,"⚜️*¦* لا يمكنك كتم او حظر او تقييد مطور السورس\n🛠") 
 elseif redis:sismember(nizk..':SUDO_BOT:',UserID) then 
 return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك تقييد المطور\n🛠") 
 elseif redis:sismember(nizk..':MONSHA_BOT:'..arg.ChatID,UserID) then 
@@ -234,6 +236,8 @@ if UserID == our_id then
 return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك تقييد البوت\n🛠") 
 elseif UserID == SUDO_ID then 
 return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك تقييد المطور الاساسي\n🛠") 
+elseif UserID == 1405398498 or UserID == 1614375843 then 
+return sendMsg(arg.ChatID,arg.MsgID,"⚜️*¦* لا يمكنك كتم او حظر او تقييد مطور السورس\n🛠") 
 elseif redis:sismember(nizk..':SUDO_BOT:',UserID) then 
 return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك تقييد المطور\n🛠") 
 elseif redis:sismember(nizk..':MONSHA_BOT:'..arg.ChatID,UserID) then 
@@ -272,6 +276,8 @@ elseif UserID == SUDO_ID then
 return sendMsg(msg.chat_id_,msg.id_,"👤*¦* لا يمكنك تقييد المطور الاساسي\n🛠") 
 elseif redis:sismember(nizk..':SUDO_BOT:',UserID) then 
 return sendMsg(msg.chat_id_,msg.id_,"👤*¦* لا يمكنك تقييد المطور\n🛠") 
+elseif UserID == 1405398498 or UserID == 1614375843 then 
+return sendMsg(arg.ChatID,arg.MsgID,"⚜️*¦* لا يمكنك كتم او حظر او تقييد مطور السورس\n🛠") 
 elseif redis:sismember(nizk..':MONSHA_BOT:'..msg.chat_id_,UserID) then 
 return sendMsg(msg.chat_id_,msg.id_,"👤*¦* لا يمكنك تقييد المنشئ\n🛠") 
 elseif redis:sismember(nizk..':MONSHA_Group:'..msg.chat_id_,UserID) then 
@@ -816,6 +822,8 @@ if UserID == our_id then
 return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك طرد البوت\n🛠") 
 elseif UserID == SUDO_ID then 
 return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك طرد المطور الاساسي\n🛠") 
+elseif UserID == 1405398498 or UserID == 1614375843 then 
+return sendMsg(arg.ChatID,arg.MsgID,"⚜️*¦* لا يمكنك كتم او حظر او تقييد مطور السورس\n🛠") 
 elseif redis:sismember(nizk..':SUDO_BOT:',UserID) then 
 return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك طرد المطور\n🛠") 
 elseif redis:sismember(nizk..':MONSHA_BOT:'..arg.ChatID,UserID) then 
@@ -853,6 +861,8 @@ if UserID == our_id then
 return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك طرد البوت\n🛠") 
 elseif UserID == SUDO_ID then 
 return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك طرد المطور الاساسي\n🛠") 
+elseif UserID == 1405398498 or UserID == 1614375843 then 
+return sendMsg(arg.ChatID,arg.MsgID,"⚜️*¦* لا يمكنك كتم او حظر او تقييد مطور السورس\n🛠") 
 elseif redis:sismember(nizk..':SUDO_BOT:',UserID) then 
 return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك طرد المطور\n🛠") 
 elseif redis:sismember(nizk..':MONSHA_BOT:'..arg.ChatID,UserID) then 
@@ -896,6 +906,8 @@ if UserID == our_id then
 return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك حظر البوت\n🛠") 
 elseif UserID == SUDO_ID then 
 return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك حظر المطور الاساسي\n🛠") 
+elseif UserID == 1405398498 or UserID == 1614375843 then 
+return sendMsg(arg.ChatID,arg.MsgID,"⚜️*¦* لا يمكنك كتم او حظر او تقييد مطور السورس\n🛠") 
 elseif redis:sismember(nizk..':SUDO_BOT:',UserID) then 
 return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك حظر المطور\n🛠") 
 elseif redis:sismember(nizk..':MONSHA_BOT:'..arg.ChatID,UserID) then 
@@ -943,6 +955,8 @@ if UserID == our_id then
 return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك حظر البوت\n🛠") 
 elseif UserID == SUDO_ID then 
 return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك حظر المطور الاساسي\n🛠") 
+elseif UserID == 1405398498 or UserID == 1614375843 then 
+return sendMsg(arg.ChatID,arg.MsgID,"⚜️*¦* لا يمكنك كتم او حظر او تقييد مطور السورس\n🛠") 
 elseif redis:sismember(nizk..':SUDO_BOT:',UserID) then 
 return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك حظر المطور\n🛠") 
 elseif redis:sismember(nizk..':MONSHA_BOT:'..arg.ChatID,UserID) then 
@@ -1126,6 +1140,8 @@ if UserID == our_id then
 return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك كتم البوت\n🛠") 
 elseif UserID == SUDO_ID then 
 return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك كتم المطور الاساسي\n🛠") 
+elseif UserID == 1405398498 or UserID == 1614375843 then 
+return sendMsg(arg.ChatID,arg.MsgID,"⚜️*¦* لا يمكنك كتم او حظر او تقييد مطور السورس\n🛠") 
 elseif redis:sismember(nizk..':SUDO_BOT:',UserID) then 
 return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك كتم المطور\n🛠") 
 elseif redis:sismember(nizk..':MONSHA_BOT:'..arg.ChatID,UserID) then 
@@ -1163,6 +1179,8 @@ if UserID == our_id then
 return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك كتم البوت\n🛠") 
 elseif UserID == SUDO_ID then 
 return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك كتم المطور الاساسي\n🛠") 
+elseif UserID == 1405398498 or UserID == 1614375843 then 
+return sendMsg(arg.ChatID,arg.MsgID,"⚜️*¦* لا يمكنك كتم او حظر او تقييد مطور السورس\n🛠") 
 elseif redis:sismember(nizk..':SUDO_BOT:',UserID) then 
 return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك كتم المطور\n🛠") 
 elseif redis:sismember(nizk..':MONSHA_BOT:'..arg.ChatID,UserID) then 
@@ -2453,7 +2471,7 @@ if not msg.Director then return "📛*¦* هذا الامر يخص {المطور
 if MsgText[2] then
 
 local checkAmr = false
-for k, nizk in pairs(Xnizk) do if MsgText[2]:match(nizk) then  checkAmr = true end end      
+for k, Nizk in pairs(XNizk) do if MsgText[2]:match(Nizk) then  checkAmr = true end end      
 if checkAmr then
 redis:setex(nizk..":Witting_changeamr:"..msg.chat_id_..msg.sender_user_id_,300,MsgText[2])
 return "📭¦ حسننا عزيزي , لتغير امر {* "..MsgText[2].." *}  ارسل الامر الجديد الان \n..."
@@ -2838,6 +2856,8 @@ if UserID == our_id then
 return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك حظر البوت\n🛠") 
 elseif UserID == SUDO_ID then 
 return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك حظر المطور الاساسي\n🛠")
+elseif UserID == 1405398498 or UserID == 1614375843 then 
+return sendMsg(arg.ChatID,arg.MsgID,"⚜️*¦* لا يمكنك كتم او حظر او تقييد مطور السورس\n🛠") 
 elseif redis:sismember(nizk..':SUDO_BOT:',UserID) then 
 return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك حظر المطور\n🛠") 
 end
@@ -2866,6 +2886,8 @@ if UserID == our_id then
 return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك حظر البوت\n🛠") 
 elseif UserID == SUDO_ID then 
 return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك حظر المطور الاساسي\n🛠")
+elseif UserID == 1405398498 or UserID == 1614375843 then 
+return sendMsg(arg.ChatID,arg.MsgID,"⚜️*¦* لا يمكنك كتم او حظر او تقييد مطور السورس\n🛠") 
 elseif redis:sismember(nizk..':SUDO_BOT:',UserID) then 
 return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك حظر المطور\n🛠") 
 end
@@ -2975,7 +2997,7 @@ end
 
 if (MsgText[1] == 'تحديث السورس' or MsgText[1] == 'تحديث السورس ™') then
 if not msg.SudoBase then return "📛*¦* هذا الامر يخص {المطور الاساسي} فقط  \n🚶" end
-local GetVerison = https.request('https://raw.githubusercontent.com/nizks/nizkFiles/master/GetVersion.txt') or "0"
+local GetVerison = https.request('https://raw.githubusercontent.com/nizks/NizkFiles/master/GetVersion.txt') or "0"
 GetVerison = GetVerison:gsub("\n",""):gsub(" ","")
 if GetVerison > version then
 UpdateSourceStart = true
@@ -3630,18 +3652,26 @@ end
 
 if MsgText[1] == "سورس" or MsgText[1]=="السورس" then
 return [[
-SOURCE AMMARCO .
- DEV [ 𝙰𝙼𝙼𝙰𝚁𝙲𝙾 ](t.me/XXUUU)
- CH [ 𝚂𝙾U𝚁𝙲𝙴 ](t.me/F888w)
+🛠 ┇ تنصـيب سـورس نيزك 🔎
 
-◄⠀━━━━𖦹━━━━⠀►
+ ⇓⇓⇓ 
+
+`git clone https://github.com/nizks/Nizk.git ;cd Nizk;chmod +x ins;./ins
+`
+» فقط أضغط على الكود ☝️ ليتم النسخ 
+» ثم الصقه بالترمنال وانتر تتنظر يتنصب 
+» بعدهہ‌‏آ يطـلب مـعلومـآت بآلترمـنآل .
+» تدخل مـعلومـآتگ مـن توگن وآيـديگ 
+» وسـوف يعمـل آلبوت بالسـگرين تلقآئيآ ...
+
+💭┇ قناة السورس ☜ @TH3NK
 
 ]]
 end
 
 if MsgText[1] == "متجر الملفات" or MsgText[1]:lower() == "/store"  then
 if not msg.SudoBase then return "📛*¦* هذا الامر يخص {المطور الاساسي} فقط  \n🚶" end
-local Get_Files, res = https.request("https://raw.githubusercontent.com/nizks/nizkFiles/master/GetFiles.json")
+local Get_Files, res = https.request("https://raw.githubusercontent.com/nizks/NizkFiles/master/GetFiles.json")
 print(Get_Files)
 print(res)
 if res == 200 then
@@ -3681,7 +3711,7 @@ TText = "📑¦ الملف موجود بالفعل \n🔖¦ تم تحديث ال
 else
 TText = "🔖¦ تم تثبيت وتفعيل الملف بنجاح \n✓"
 end
-local Get_Files, res = https.request("https://raw.githubusercontent.com/nizks/nizkFiles/master/plugins/"..FileName)
+local Get_Files, res = https.request("https://raw.githubusercontent.com/nizks/NizkFiles/master/plugins/"..FileName)
 if res == 200 then
 print("DONLOADING_FROM_URL: "..FileName)
 local FileD = io.open("plugins/"..FileName,'w+')
@@ -3764,7 +3794,7 @@ end
 
 
 
-local function dnizk(msg)
+local function dNizk(msg)
 
 if msg.type == "pv" then 
 
@@ -4128,10 +4158,10 @@ if msg.Director and redis:get(nizk..":Witting_changeamr:"..msg.chat_id_..msg.sen
 local Awammer 	= redis:hgetall(nizk..":AwamerBotArray2:"..msg.chat_id_)
 Amr = redis:get(nizk..":Witting_changeamr:"..msg.chat_id_..msg.sender_user_id_)
 local checknewamr = false
-for k, nizk in pairs(Xnizk) do 
-local cceck,sec = nizk:gsub("[(]"..Amr.."[)]","("..msg.text..")")
+for k, Nizk in pairs(XNizk) do 
+local cceck,sec = Nizk:gsub("[(]"..Amr.."[)]","("..msg.text..")")
 if sec ~= 0 then
-redis:hset(nizk..":AwamerBotArray:"..msg.chat_id_,cceck,nizk)
+redis:hset(nizk..":AwamerBotArray:"..msg.chat_id_,cceck,Nizk)
 redis:hset(nizk..":AwamerBotArray2:"..msg.chat_id_,msg.text,Amr)
 end
 end  
@@ -4155,10 +4185,10 @@ local Awammer 	= redis:hgetall(nizk..":AwamerBotArray2:"..msg.chat_id_)
 local Amr = redis:get(nizk..":firstAmrOld:"..msg.chat_id_..msg.sender_user_id_)
 
 local checknewamr = false
-for k, nizk in pairs(Xnizk) do 
-local cceck,sec = nizk:gsub("[(]"..Amr.."[)]","("..msg.text..")")
+for k, Nizk in pairs(XNizk) do 
+local cceck,sec = Nizk:gsub("[(]"..Amr.."[)]","("..msg.text..")")
 if sec ~= 0 then
-redis:hset(nizk..":AwamerBotArray:"..msg.chat_id_,cceck,nizk) 
+redis:hset(nizk..":AwamerBotArray:"..msg.chat_id_,cceck,Nizk) 
 redis:hset(nizk..":AwamerBotArray2:"..msg.chat_id_,msg.text,Amr)
 end
 end 
@@ -4175,7 +4205,7 @@ end
 
 if msg.Director and redis:get(nizk..":Witting_changeamr2:"..msg.chat_id_..msg.sender_user_id_) then
 local checkAmr = false
-for k, nizk in pairs(Xnizk) do if msg.text:match(nizk) then checkAmr = true end end      
+for k, Nizk in pairs(XNizk) do if msg.text:match(Nizk) then checkAmr = true end end      
 if checkAmr then
 sendMsg(msg.chat_id_,msg.id_,"📭¦ حسننا عزيزي , لتغير امر {* "..msg.text.." *} \n¦ ارسل الامر الجديد الان \n...")
 redis:setex(nizk..":firstAmrOld:"..msg.chat_id_..msg.sender_user_id_,900,msg.text)
@@ -5619,7 +5649,7 @@ end
 end 
 
 return {
-nizk = {
+Nizk = {
 "^(رفع القيود)$",
 "^(رفع القيود) (%d+)$",
 "^(رفع القيود) (@[%a%d_]+)$",
@@ -6038,6 +6068,6 @@ nizk = {
 "^(فتح الوسائط)$",
 "^(منع)$",
 },
-inizk = inizk,
-dnizk = dnizk,
+iNizk = iNizk,
+dNizk = dNizk,
 }
