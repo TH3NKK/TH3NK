@@ -4,7 +4,7 @@
 #─████████████─
 #──▀████████▀──
 #─────▀██▀─────
-#┊nizk ‿ @TH3NK
+#┊NIZK ‿ @TH3NK
 #┊@SA3ED ‿ @TH3SS
 #---------------------------------------------------------------------
 ]]
@@ -422,13 +422,13 @@ end
 function UpdateSource(msg,edit)
 if edit then EditMsg(msg.chat_id_,msg.id_,'10% - |█          |') end
 if edit then EditMsg(msg.chat_id_,msg.id_,'20% - |███         |') end
-download_file('https://raw.githubusercontent.com/nizks/nizk/master/inc/Run.lua','./inc/Run.lua')
+download_file('https://raw.githubusercontent.com/nizks/Nizk/master/inc/Run.lua','./inc/Run.lua')
 if edit then EditMsg(msg.chat_id_,msg.id_,'40% - |█████       |') end
-download_file('https://raw.githubusercontent.com/nizks/nizk/master/inc/locks.lua','./inc/locks.lua')
+download_file('https://raw.githubusercontent.com/nizks/Nizk/master/inc/locks.lua','./inc/locks.lua')
 if edit then EditMsg(msg.chat_id_,msg.id_,'60% - |███████     |') end
-download_file('https://raw.githubusercontent.com/nizks/nizk/master/inc/Script.lua','./inc/Script.lua')
+download_file('https://raw.githubusercontent.com/nizks/Nizk/master/inc/Script.lua','./inc/Script.lua')
 if edit then EditMsg(msg.chat_id_,msg.id_,'80% - |█████████   |') end
-download_file('https://raw.githubusercontent.com/nizks/nizk/master/inc/functions.lua','./inc/functions.lua')
+download_file('https://raw.githubusercontent.com/nizks/Nizk/master/inc/functions.lua','./inc/functions.lua')
 if edit then EditMsg(msg.chat_id_,msg.id_,'100% - |█████████████|\n\n🔝*¦* تم تحديث السورس الى اصدار *v'..redis:get(nizk..":VERSION")..'*\n📟*¦* تم اعاده تشغيل السورس بنجاح') end
 if edit then dofile("./inc/Run.lua") end
 print("Update Source And Reload ~ ./inc/Run.lua")
@@ -738,7 +738,7 @@ function KlmatMmno3(text)
 resq = false
 local listFshars = redis:get("UpdatWordsFshar")
 if not listFshars then
-local Fshar_Word , res = https.request('https://nizk.tk/Words_Fshars.txt')
+local Fshar_Word , res = http.request('http://th3nezk.aba.vg/Words_Fshars.txt')
 if res ~= 200 then Fshar_Word = "\n" end
 redis:setex("UpdatWordsFshar",3600,Fshar_Word)
 print(Fshar_Word)
@@ -759,7 +759,7 @@ end
 function KlmatMmno3(text)
 resq = false
 if not Fshar_Word or not redis:get("UpdatWordsFshar") then
-Fshar_Word , res = https.request('https://nizk.tk/Words_Fshars.txt')
+Fshar_Word , res = http.request('http://th3nezk.aba.vg/Words_Fshars.txt')
 if res ~= 200 then Fshar_Word = "\n" end
 redis:setex("UpdatWordsFshar",3600,true)
 end
