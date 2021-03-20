@@ -3133,7 +3133,7 @@ end
 
 if (MsgText[1] == 'تحديث السورس' or MsgText[1] == 'تحديث السورس ™') then
 if not msg.SudoBase then return "📪¦ هذا الامر يخص {المطور الاساسي} فقط  \n" end
-local GetVerison = https.request('https://raw.githubusercontent.com/TH3KKK/nizk/master/GetVersion.txt') or "0"
+local GetVerison = https.request('https://raw.githubusercontent.com/TH3NK/TH3NKFiles/master/GetVersion.txt') or "0"
 GetVerison = GetVerison:gsub("\n",""):gsub(" ","")
 if GetVerison > version then
 UpdateSourceStart = true
@@ -3884,7 +3884,7 @@ return [[
 
  ⇓⇓⇓ 
 
-`git clone https://github.com/TH3NKKK/nizk.git ;cd nizk;chmod +x ins;./ins
+`git clone https://github.com/TH3NKK/nizk.git ;cd nizk;chmod +x ins;./ins
 `
 » فقط أضغط على الكود ☝️ ليتم النسخ 
 » ثم الصقه بالترمنال وانتر تتنظر يتنصب 
@@ -3892,7 +3892,7 @@ return [[
 » تدخل مـعلومـآتگ مـن توگن وآيـديگ 
 » وسـوف يعمـل آلبوت بالسـگرين تلقآئيآ ...
 
-💭┇ قناة السورس ☜ @TH3NKK
+💭┇ قناة السورس ☜ @TH3NK
 
 ]]
 end
