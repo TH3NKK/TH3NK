@@ -4,8 +4,8 @@
 #─████████████─
 #──▀████████▀──
 #─────▀██▀─────
-#┊NIZK ‿ @nizk
-#┊@SA3ED ‿ @TH3SS
+#┊NIZK ‿ @TH3NK
+#┊@kiindi ‿ @uu_iv
 #---------------------------------------------------------------------
 ]]
 local function inizk(msg,MsgText)
@@ -4230,7 +4230,7 @@ elseif msg.content_.ID == "MessageVideo" then
 redis:sadd(nizk..':KlmatRRandom:',klma) 
 redis:sadd(nizk..':ReplayRandom:'..klma,":Video:"..msg.content_.video_.video_.persistent_id_) 
 CaptionInsert(msg,msg.content_.video_.video_.persistent_id_,true)
-return sendMsg(msg.chat_id_,msg.id_,'🎥¦ تم ادراج الفيديو للرد باقي '..CountRdod..' ✓\n🎥¦ ارسل رد اخر او ارسل {تم} .')
+return sendMsg(msg.chat_id_,msg.id_,'??¦ تم ادراج الفيديو للرد باقي '..CountRdod..' ✓\n🎥¦ ارسل رد اخر او ارسل {تم} .')
 elseif msg.content_.ID == "MessageAudio" then
 redis:sadd(nizk..':KlmatRRandom:',klma) 
 redis:sadd(nizk..':ReplayRandom:'..klma,":Audio:"..msg.content_.audio_.audio_.persistent_id_) 
