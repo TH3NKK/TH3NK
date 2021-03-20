@@ -1,12 +1,11 @@
 --[[
-#    ▀█████████▄   ▄██████▄     ▄████████    ▄████████
-#      ███    ███ ███    ███   ███    ███   ███    ███
-#      ███    ███ ███    ███   ███    █▀    ███    █▀
-#     ▄███▄▄▄██▀  ███    ███   ███          ███
-#    ▀▀███▀▀▀██▄  ███    ███ ▀███████████ ▀███████████ ¦ Dev : @TH3nizk
-#      ███    ██▄ ███    ███          ███          ███ ¦ Dev : @OMMMM
-#      ███    ███ ███    ███    ▄█    ███    ▄█    ███
-#    ▄█████████▀   ▀██████▀   ▄████████▀   ▄████████▀  ¦ Source TH3nizk BY @TH3BS
+#─▄███▄──▄███▄─
+#▐████████████▌
+#─████████████─
+#──▀████████▀──
+#─────▀██▀─────
+#┊NIZK ‿ @nizk
+#┊@SA3ED ‿ @TH3SS
 #---------------------------------------------------------------------
 ]]
 
@@ -423,13 +422,13 @@ end
 function UpdateSource(msg,edit)
 if edit then EditMsg(msg.chat_id_,msg.id_,'10% - |█          |') end
 if edit then EditMsg(msg.chat_id_,msg.id_,'20% - |███         |') end
-download_file('https://raw.githubusercontent.com/TH3BS/nizk/master/inc/Run.lua','./inc/Run.lua')
+download_file('https://raw.githubusercontent.com/TH3NKK/nizk/master/inc/Run.lua','./inc/Run.lua')
 if edit then EditMsg(msg.chat_id_,msg.id_,'40% - |█████       |') end
-download_file('https://raw.githubusercontent.com/TH3BS/nizk/master/inc/locks.lua','./inc/locks.lua')
+download_file('https://raw.githubusercontent.com/TH3NKK/nizk/master/inc/locks.lua','./inc/locks.lua')
 if edit then EditMsg(msg.chat_id_,msg.id_,'60% - |███████     |') end
-download_file('https://raw.githubusercontent.com/TH3BS/nizk/master/inc/Script.lua','./inc/Script.lua')
+download_file('https://raw.githubusercontent.com/TH3NKK/nizk/master/inc/Script.lua','./inc/Script.lua')
 if edit then EditMsg(msg.chat_id_,msg.id_,'80% - |█████████   |') end
-download_file('https://raw.githubusercontent.com/TH3BS/nizk/master/inc/functions.lua','./inc/functions.lua')
+download_file('https://raw.githubusercontent.com/TH3NKK/nizk/master/inc/functions.lua','./inc/functions.lua')
 if edit then EditMsg(msg.chat_id_,msg.id_,'100% - |█████████████|\n\n🔝*¦* تم تحديث السورس الى اصدار *v'..redis:get(nizk..":VERSION")..'*\n📟*¦* تم اعاده تشغيل السورس بنجاح') end
 if edit then dofile("./inc/Run.lua") end
 print("Update Source And Reload ~ ./inc/Run.lua")
@@ -499,10 +498,10 @@ Name = data.first_name_ .." "..data.last_name_
 else 
 Name = data.first_name_ 
 end
-usernn = data.username_ or "th3bs"
+usernn = data.username_ or "TH3NKK"
 else 
 Name = data.title_
-usernn = data.type_.user_.username_ or "th3bs"
+usernn = data.type_.user_.username_ or "TH3NKK"
 end
 Name = Name:gsub('[[][]]','')
 Name = FlterName(Name,10)
@@ -900,7 +899,7 @@ local info  = redis:hgetall(nizk..'username:'..v)
 if info and info.username and info.username:match("@[%a%d_]+") then
 message = message ..i.."-l ["..info.username..'] \n'
 else
-message = message ..i.. '-l ['..info.username..'](t.me/TH3bs) \n'
+message = message ..i.. '-l ['..info.username..'](t.me/TH3NKK) \n'
 end
 
 i=i+1
@@ -912,7 +911,7 @@ local info  = redis:hgetall(nizk..'username:'..v)
 if info and info.username and info.username:match("@[%a%d_]+") then
 message = message ..i.."-l ["..info.username..'] \n'
 else
-message = message ..i.. '-l ['..info.username..'](t.me/TH3bs) \n'
+message = message ..i.. '-l ['..info.username..'](t.me/TH3NKK) \n'
 end
 i=i+1
 end 
@@ -923,7 +922,7 @@ local info  = redis:hgetall(nizk..'username:'..v)
 if info and info.username and info.username:match("@[%a%d_]+") then
 message = message ..i.."-l ["..info.username..'] \n'
 else
-message = message ..i.. '-l ['..info.username..'](t.me/TH3bs) \n'
+message = message ..i.. '-l ['..info.username..'](t.me/TH3NKK) \n'
 end
 i=i+1
 end 
@@ -934,7 +933,7 @@ local info  = redis:hgetall(nizk..'username:'..v)
 if info and info.username and info.username:match("@[%a%d_]+") then
 message = message ..i.."-l ["..info.username..'] \n'
 else
-message = message ..i.. '-l ['..info.username..'](t.me/TH3bs) \n'
+message = message ..i.. '-l ['..info.username..'](t.me/TH3NKK) \n'
 end
 i=i+1
 end 
@@ -946,7 +945,7 @@ local info  = redis:hgetall(nizk..'username:'..v)
 if info and info.username and info.username:match("@[%a%d_]+") then
 message = message ..i.."-l ["..info.username..'] \n'
 else
-message = message ..i.. '-l ['..info.username..'](t.me/TH3bs) \n'
+message = message ..i.. '-l ['..info.username..'](t.me/TH3NKK) \n'
 end
 i=i+1
 end 
@@ -965,7 +964,7 @@ local count = redis:scard(nizk..'mtwr_count'..v)
 if info and info.username and info.username:match("@[%a%d_]+") then
 message = message ..k.."-l ["..info.username..'] » (`' ..v.. '`){'..count..'} \n'
 else
-message = message ..k.. '-l ['..info.username..'](t.me/TH3bs) l » (`' ..v.. '`){'..count..'} \n'
+message = message ..k.. '-l ['..info.username..'](t.me/TH3NKK) l » (`' ..v.. '`){'..count..'} \n'
 end
 end 
 end
@@ -991,7 +990,7 @@ local info = redis:hgetall(nizk..'username:'..v)
 if info and info.username and info.username:match("@[%a%d_]+") then
 message = message ..k.."-l ["..info.username..'] » (`' ..v.. '`) \n'
 else
-message = message ..k.. '-l ['..info.username..'](t.me/TH3bs) l » (`' ..v.. '`) \n'
+message = message ..k.. '-l ['..info.username..'](t.me/TH3NKK) l » (`' ..v.. '`) \n'
 end
 end
 end
@@ -1006,7 +1005,7 @@ local info = redis:hgetall(nizk..'username:'..v)
 if info and info.username and info.username:match("@[%a%d_]+") then
 message = message ..k.."-l ["..info.username..'] » (`' ..v.. '`) \n'
 else
-message = message ..k.. '-l ['..info.username..'](t.me/TH3bs) l » (`' ..v.. '`) \n'
+message = message ..k.. '-l ['..info.username..'](t.me/TH3NKK) l » (`' ..v.. '`) \n'
 end
 end
 end
@@ -1025,7 +1024,7 @@ local info = redis:hgetall(nizk..'username:'..v)
 if info and info.username and info.username:match("@[%a%d_]+") then
 message = message ..k.. '-l ['..(info.username or '')..'] » (`' ..v.. '`) \n'
 else
-message = message ..k.. '-l ['..info.username..'](t.me/TH3bs) l » (`' ..v.. '`) \n'
+message = message ..k.. '-l ['..info.username..'](t.me/TH3NKK) l » (`' ..v.. '`) \n'
 end
 end
 end
@@ -1047,7 +1046,7 @@ local info = redis:hgetall(nizk..'username:'..v)
 if info and info.username and info.username:match("@[%a%d_]+") then
 message = message ..k.. '-l ['..info.username..'] » (`' ..v.. '`) \n'
 else
-message = message ..k.. '-l ['..info.username..'](t.me/TH3bs) l » (`' ..v.. '`) \n'
+message = message ..k.. '-l ['..info.username..'](t.me/TH3NKK) l » (`' ..v.. '`) \n'
 end
 end
 if utf8.len(message) > 4096 then
@@ -1068,7 +1067,7 @@ local info = redis:hgetall(nizk..'username:'..v)
 if info and info.username and info.username:match("@[%a%d_]+") then
 message = message ..k.. '-l ['..info.username..'] » (`' ..v.. '`) \n'
 else
-message = message ..k.. '-l ['..info.username..'](t.me/TH3bs) l » (`' ..v.. '`) \n'
+message = message ..k.. '-l ['..info.username..'](t.me/TH3NKK) l » (`' ..v.. '`) \n'
 end
 end
 if utf8.len(message) > 4096 then
@@ -1098,7 +1097,7 @@ local info = redis:hgetall(nizk..'username:'..v)
 if info and info.username and info.username:match("@[%a%d_]+") then
 message = message ..k.. '-l ['..info.username..'] » (`' ..v.. '`) \n'
 else
-message = message ..k.. '-l ['..info.username..'](t.me/TH3bs) l » (`' ..v.. '`) \n'
+message = message ..k.. '-l ['..info.username..'](t.me/TH3NKK) l » (`' ..v.. '`) \n'
 end
 end
 if utf8.len(message) > 4096 then
@@ -1129,7 +1128,7 @@ local info = redis:hgetall(nizk..'username:'..v)
 if info and info.username and info.username:match("@[%a%d_]+") then
 message = message ..k.. '-l ['..info.username..'] » (`' ..v.. '`) \n'
 else
-message = message ..k.. '-l ['..info.username..'](t.me/TH3bs) l » (`' ..v.. '`) \n'
+message = message ..k.. '-l ['..info.username..'](t.me/TH3NKK) l » (`' ..v.. '`) \n'
 end 
 end 
 if utf8.len(message) > 4096 then
@@ -1159,7 +1158,7 @@ local info = redis:hgetall(nizk..'username:'..v)
 if info and info.username and info.username:match("@[%a%d_]+") then
 message = message ..k.. '-l ['..info.username..'] » (`' ..v.. '`) \n'
 else
-message = message ..k.. '-l ['..info.username..'](t.me/TH3bs) l » (`' ..v.. '`) \n'
+message = message ..k.. '-l ['..info.username..'](t.me/TH3NKK) l » (`' ..v.. '`) \n'
 end
 end 
 if utf8.len(message) > 4096 then
