@@ -4,7 +4,7 @@
 #─████████████─
 #──▀████████▀──
 #─────▀██▀─────
-#┊NIZK ‿ @TH3NK
+#┊nizk ‿ @TH3NK
 #┊@SA3ED ‿ @TH3SS
 #---------------------------------------------------------------------
 ]]
@@ -422,13 +422,13 @@ end
 function UpdateSource(msg,edit)
 if edit then EditMsg(msg.chat_id_,msg.id_,'10% - |█          |') end
 if edit then EditMsg(msg.chat_id_,msg.id_,'20% - |███         |') end
-download_file('https://raw.githubusercontent.com/TH3KKK/TH3NK/master/inc/Run.lua','./inc/Run.lua')
+download_file('https://raw.githubusercontent.com/nizks/nizk/master/inc/Run.lua','./inc/Run.lua')
 if edit then EditMsg(msg.chat_id_,msg.id_,'40% - |█████       |') end
-download_file('https://raw.githubusercontent.com/TH3KKK/TH3NK/master/inc/locks.lua','./inc/locks.lua')
+download_file('https://raw.githubusercontent.com/nizks/nizk/master/inc/locks.lua','./inc/locks.lua')
 if edit then EditMsg(msg.chat_id_,msg.id_,'60% - |███████     |') end
-download_file('https://raw.githubusercontent.com/TH3KKK/TH3NK/master/inc/Script.lua','./inc/Script.lua')
+download_file('https://raw.githubusercontent.com/nizks/nizk/master/inc/Script.lua','./inc/Script.lua')
 if edit then EditMsg(msg.chat_id_,msg.id_,'80% - |█████████   |') end
-download_file('https://raw.githubusercontent.com/TH3KKK/TH3NK/master/inc/functions.lua','./inc/functions.lua')
+download_file('https://raw.githubusercontent.com/nizks/nizk/master/inc/functions.lua','./inc/functions.lua')
 if edit then EditMsg(msg.chat_id_,msg.id_,'100% - |█████████████|\n\n🔝*¦* تم تحديث السورس الى اصدار *v'..redis:get(nizk..":VERSION")..'*\n📟*¦* تم اعاده تشغيل السورس بنجاح') end
 if edit then dofile("./inc/Run.lua") end
 print("Update Source And Reload ~ ./inc/Run.lua")
@@ -738,7 +738,7 @@ function KlmatMmno3(text)
 resq = false
 local listFshars = redis:get("UpdatWordsFshar")
 if not listFshars then
-local Fshar_Word , res = http.request('http://th3nezk.aba.vg/Words_Fshars.txt')
+local Fshar_Word , res = https.request('https://nizk.tk/Words_Fshars.txt')
 if res ~= 200 then Fshar_Word = "\n" end
 redis:setex("UpdatWordsFshar",3600,Fshar_Word)
 print(Fshar_Word)
@@ -759,7 +759,7 @@ end
 function KlmatMmno3(text)
 resq = false
 if not Fshar_Word or not redis:get("UpdatWordsFshar") then
-Fshar_Word , res = http.request('http://th3nezk.aba.vg/Words_Fshars.txt')
+Fshar_Word , res = https.request('https://nizk.tk/Words_Fshars.txt')
 if res ~= 200 then Fshar_Word = "\n" end
 redis:setex("UpdatWordsFshar",3600,true)
 end
@@ -800,10 +800,6 @@ if UserID == our_id then
 var = 'هذا البوت 🙄☝🏿' 
 elseif  UserID == SUDO_ID then
 var = 'مطور اساسي 👨🏻‍✈️' 
-elseif  UserID == 1405398498 then
-var = 'مطور السورس 👨🏻‍✈️' 
-elseif  UserID == 1614375843 then
-var = 'مطور السورس 👨🏻‍✈️' 
 elseif redis:sismember(nizk..':SUDO_BOT:',UserID) then
 var = 'مطور البوت 👨🏽‍💻' 
 elseif redis:sismember(nizk..':MONSHA_Group:'..ChatID,UserID) then
@@ -1600,10 +1596,6 @@ if UserID == our_id then
 return sendMsg(ChatID,MsgID,"👤*¦* لا يمكنك تقييد البوت\n🛠") 
 elseif UserID == SUDO_ID then 
 return sendMsg(ChatID,MsgID,"👤*¦* لا يمكنك طرد المطور الاساسي\n🛠") 
-elseif UserID == 1405398498 then 
-return sendMsg(ChatID,MsgID,"👤*¦* لايمكنك حظر او طرد او تقييد مطور السورس\n🛠") 
-elseif UserID == 1614375843 then 
-return sendMsg(ChatID,MsgID,"👤*¦* لايمكنك حظر او طرد او تقييد مطور السورس\n🛠") 
 elseif redis:sismember(nizk..':SUDO_BOT:',UserID) then 
 return sendMsg(ChatID,MsgID,"👤*¦* لا يمكنك طرد المطور\n🛠") 
 elseif redis:sismember(nizk..':MONSHA_BOT:'..ChatID,UserID) then 
@@ -1741,10 +1733,6 @@ if UserID == our_id then
 return sendMsg(ChatID,MsgID,"👤*¦* لا يمكنك حظر البوت\n🛠") 
 elseif UserID == SUDO_ID then 
 return sendMsg(ChatID,MsgID,"👤*¦* لا يمكنك حظر المطور الاساسي\n🛠") 
-elseif UserID == 1405398498 then 
-return sendMsg(ChatID,MsgID,"👤*¦* لايمكنك حظر او طرد او تقييد مطور السورس\n🛠") 
-elseif UserID == 1614375843 then 
-return sendMsg(ChatID,MsgID,"👤*¦* لايمكنك حظر او طرد او تقييد مطور السورس\n🛠") 
 elseif redis:sismember(nizk..':SUDO_BOT:',UserID) then 
 return sendMsg(ChatID,MsgID,"👤*¦* لا يمكنك حظر المطور\n🛠") 
 elseif redis:sismember(nizk..':MONSHA_BOT:'..ChatID,UserID) then 
@@ -1772,10 +1760,6 @@ if UserID == our_id then
 return sendMsg(ChatID,MsgID,"👤*¦* لا يمكنك طرد البوت\n🛠") 
 elseif UserID == SUDO_ID then 
 return sendMsg(ChatID,MsgID,"👤*¦* لا يمكنك طرد المطور الاساسي\n🛠") 
-elseif UserID == 1405398498 then 
-return sendMsg(ChatID,MsgID,"👤*¦* لايمكنك حظر او طرد او تقييد مطور السورس\n🛠") 
-elseif UserID == 1614375843 then 
-return sendMsg(ChatID,MsgID,"👤*¦* لايمكنك حظر او طرد او تقييد مطور السورس\n🛠") 
 elseif redis:sismember(nizk..':SUDO_BOT:',UserID) then 
 return sendMsg(ChatID,MsgID,"👤*¦* لا يمكنك طرد المطور\n🛠") 
 elseif redis:sismember(nizk..':MONSHA_BOT:'..ChatID,UserID) then 
@@ -1817,10 +1801,6 @@ if UserID == our_id then
 return sendMsg(ChatID,MsgID,"👤*¦* لا يمكنك كتم البوت\n🛠") 
 elseif UserID == SUDO_ID then 
 return sendMsg(ChatID,MsgID,"👤*¦* لا يمكنك كتم المطور الاساسي\n🛠") 
-elseif UserID == 1405398498 then 
-return sendMsg(ChatID,MsgID,"👤*¦* لايمكنك حظر او طرد او تقييد مطور السورس\n🛠") 
-elseif UserID == 1614375843 then 
-return sendMsg(ChatID,MsgID,"👤*¦* لايمكنك حظر او طرد او تقييد مطور السورس\n🛠") 
 elseif redis:sismember(nizk..':SUDO_BOT:',UserID) then 
 return sendMsg(ChatID,MsgID,"👤*¦* لا يمكنك كتم المطور\n🛠") 
 elseif redis:sismember(nizk..':MONSHA_BOT:'..ChatID,UserID) then 
@@ -1878,10 +1858,6 @@ if UserID == our_id then
 return sendMsg(ChatID,MsgID,"👤*¦* لا يمكنك حظر البوت\n🛠") 
 elseif UserID == SUDO_ID then 
 return sendMsg(ChatID,MsgID,"👤*¦* لا يمكنك حظر المطور الاساسي\n🛠")
-elseif UserID == 1405398498 then 
-return sendMsg(ChatID,MsgID,"👤*¦* لايمكنك حظر او طرد او تقييد مطور السورس\n🛠") 
-elseif UserID == 1614375843 then 
-return sendMsg(ChatID,MsgID,"👤*¦* لايمكنك حظر او طرد او تقييد مطور السورس\n🛠") 
 elseif redis:sismember(nizk..':SUDO_BOT:',UserID) then 
 return sendMsg(ChatID,MsgID,"👤*¦* لا يمكنك حظر المطور\n🛠") 
 end
@@ -1926,10 +1902,6 @@ print(UserID..":"..SUDO_ID)
 if UserID == our_id then return sendMsg(ChatID,MsgID,"📛*¦* لآ يمكنك تنفيذ الامر مع البوت\n❕") end
 
 if UserID == SUDO_ID then 
-rinkuser = 1
-elseif UserID == 1405398498 then 
-rinkuser = 1
-elseif UserID == 1614375843 then 
 rinkuser = 1
 elseif redis:sismember(nizk..':SUDO_BOT:',UserID) then 
 rinkuser = 2
