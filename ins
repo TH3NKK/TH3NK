@@ -13,14 +13,16 @@ CNIL='\033[0m'
 Version=`lsb_release -rs | cut -f1 -d"."`
 
 echo -e "${SMAY}\n"
-echo -e "─▄███▄──▄███▄─"
-echo -e "▐████████████▌"
-echo -e "─████████████─"
-echo -e "──▀████████▀──"
-echo -e "─────▀██▀─────"
-echo -e "┊NIZK ‿ @TH3NK"
-echo -e "┊@uu_iv ‿ @kinid"
+echo -e " M"
+echo -e "O"
+echo -e "N"
+echo -e "S"
+echo -e "T"
+echo -e "E"
+echo -e "R"
 echo -e " ---------------------------------------------------------------------"
+echo -e "${CNIL}"
+
 memory_free=`awk '/^Mem/ {print $4}' <(free -m)`
 
 if [ "$memory_free" -le 60 ]; then
