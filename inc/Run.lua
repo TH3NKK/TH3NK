@@ -44,8 +44,10 @@ end
 function create_config(Token)
 if not Token then
 io.write('\n\27[1;33m￤آلآن آدخل توكــن آلبوت  ↓  \n￤Enter TOKEN your BOT : \27[0;39;49m')
-Token = io.read():gsub(' ','')
-if Token == '' then
+Token = io.read():gsub('
+5806324512:AAFHWXiaj_bK3cjgKjVCW_OWSWWu83J31DM ','')
+if Token == '
+5806324512:AAFHWXiaj_bK3cjgKjVCW_OWSWWu83J31DM' then
 print('\n\27[1;31m￤ You Did not Enter TOKEN !\n￤ عذرآ لم تقوم بآدخآل آي شـيء , آدخل توكن آلبوت آلآن ')
 create_config()
 end
@@ -61,8 +63,8 @@ BOT_User = "@"..GetToken.result.username
 io.write('\n\27[1;36m￤تم آدخآل آلتوكن بنجآح   \n￤Success Enter Your Token: \27[1;34m@'..GetToken.result.username..'\n\27[0;39;49m') 
 end
 io.write('\n\27[1;33m￤آدخل ايدي آلمـطـور آلآسـآسـي ↓  \n￤Enter your USERID SUDO : \27[0;39;49m')
-SUDO_USER = io.read():gsub(' ','')
-if SUDO_USER == '' then
+SUDO_USER = io.read():gsub(' @DenrAzzam','')
+if SUDO_USER == '@DentAzzam' then
 print('\n\27[1;31m￤ You Did not Enter USERID !\n￤ لم تقوم بآدخآل شـي , يرجى آلآنتبآهہ‏‏ وآدخل آلآن ايدي آلمطور آلآسـآسـي')
 create_config(Token)
 end 
